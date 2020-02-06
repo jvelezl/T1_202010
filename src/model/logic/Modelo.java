@@ -1,7 +1,11 @@
 package model.logic;
 
+import java.io.File;
+import java.util.ArrayList;
+
 import model.data_structures.ArregloDinamico;
 import model.data_structures.IArregloDinamico;
+import model.data_structures.ListaEncadenada;
 
 /**
  * Definicion del modelo del mundo
@@ -66,6 +70,19 @@ public class Modelo {
 	public String eliminar(String dato)
 	{
 		return datos.eliminar(dato);
+	}
+	
+	//Cargar 
+	
+	public void cargaDeComparendos()
+	{
+		File[] Comparendos = null;
+		File file = new File (Comparendos);
+		
+		ArrayList compa = new ArrayList<>();
+		File [] elementos = Comparendos;
+		
+		
 	}
 
 

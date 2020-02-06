@@ -97,7 +97,14 @@ public class ListaEncadenada <T> implements ILista<T>
 	public T get(T element) 
 	{
 		
-		return null;
+		Nodo <T> actual = primero;
+		
+		while (actual != null && !actual.equals(element))
+		{
+			actual = actual.darSiguiente();
+		}
+		
+		return (T) actual;
 	}
 
 	
@@ -131,8 +138,28 @@ public class ListaEncadenada <T> implements ILista<T>
 	}
 
 	
-	public void remove(T element) {
+	public void remove(T element) 
+	{
 		
+		if(tamano > 0)
+		{
+			if(element == primero)
+			{
+				primero = primero.darSiguiente();
+			}
+			
+			else
+			{
+				Nodo <T> actual = (Nodo<T>) element;
+				Nodo <T> sig = actual.darSiguiente();
+				Nodo <T> ant = actual.darAnterior();
+				
+				sig.cambiarAnterior(ant);
+				ant.cambiarSiguiente(sig);
+				
+				
+			}
+		}
 
 	}
 
