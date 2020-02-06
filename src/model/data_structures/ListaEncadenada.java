@@ -2,15 +2,15 @@ package model.data_structures;
 
 public class ListaEncadenada <T> implements ILista<T>
 {
-	private Nodo<T> first;
+	private Nodo<T> primero;
 
-	private int size;
+	private int tamano;
 
 	public ListaEncadenada() 
 	{
 		// TODO Auto-generated constructor stub
-		size = 0;
-		first = null;
+		tamano = 0;
+		primero = null;
 	}
 
 
@@ -18,28 +18,28 @@ public class ListaEncadenada <T> implements ILista<T>
 
 	{
 
-		if (size == 0) 
+		if (tamano == 0) 
 		{
-			first = new Nodo<T>(element);
+			primero = new Nodo<T>();
 
 		} 
 
 		else 
 		{
-			Nodo<T> nodoActual = first;
+			Nodo<T> nodoActual = primero;
 
 			while(nodoActual.hasNext()) 
 			{
 				nodoActual = nodoActual.darSiguiente();
 			}
-			Nodo<T> nuevoNodo = new Nodo<T>(element);
+			Nodo<T> nuevoNodo = new Nodo<T>();
 
 			nodoActual.cambiarSiguiente(nuevoNodo);
 
 			nuevoNodo.cambiarAnterior(nodoActual);
 		}
 
-		size ++;
+		tamano ++;
 	}
 
 
@@ -47,16 +47,16 @@ public class ListaEncadenada <T> implements ILista<T>
 	{
 		int i = -1;
 
-		if (size == 0)
+		if (tamano == 0)
 		{
-			first = new Nodo<T> (element);
+			primero = new Nodo<T> ();
 			index = i;
 
 		}
 
 		else
 		{
-			Nodo<T> nodoActual = first;
+			Nodo<T> nodoActual = primero;
 
 			while(nodoActual.hasNext()) 
 			{
@@ -64,14 +64,14 @@ public class ListaEncadenada <T> implements ILista<T>
 				index ++;	
 			}
 
-			Nodo<T> nuevoNodo = new Nodo<T>(element);
+			Nodo<T> nuevoNodo = new Nodo<T>();
 
 			nodoActual.cambiarSiguiente(nuevoNodo);
 
 			nuevoNodo.cambiarAnterior(nodoActual);
 		}
 		
-		size ++;
+		tamano ++;
 
 
 
@@ -80,7 +80,7 @@ public class ListaEncadenada <T> implements ILista<T>
 	
 	public T get(int index) 
 	{
-		Nodo <T> actual =  first;
+		Nodo <T> actual =  primero;
 		
 		while (actual != null && actual.getIndex() != index )
 			
@@ -94,25 +94,26 @@ public class ListaEncadenada <T> implements ILista<T>
 	}
 	
 
-	public T get(T element) {
-		// TODO Auto-generated method stub
+	public T get(T element) 
+	{
+		
 		return null;
 	}
 
 	
 	public int getSize() 
 	{
-		return size;
+		return tamano;
 	}
 
 	
 	public void remove(int index) 
 	{
-		if(size > 0)
+		if(tamano > 0)
 		{
-			if(index == first.getIndex())
+			if(index == primero.getIndex())
 			{
-				first = first.darSiguiente();
+				primero = primero.darSiguiente();
 			}
 			
 			else
@@ -129,10 +130,10 @@ public class ListaEncadenada <T> implements ILista<T>
 		}
 	}
 
-	@Override
-	public boolean remove(T element) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	public void remove(T element) {
+		
+
 	}
 
 

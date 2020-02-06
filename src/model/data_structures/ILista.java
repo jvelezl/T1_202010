@@ -16,5 +16,5 @@ public interface ILista<T>
 	
 	void remove(int index);
 	
-	boolean remove(T element);
+	void remove(T element);
 }

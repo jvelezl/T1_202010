@@ -2,7 +2,6 @@ package model.data_structures;
 
 public class Nodo<T> {
 
-	private T informacion;
 	private int index;
 	
 	public int getIndex() {
@@ -15,19 +14,7 @@ public class Nodo<T> {
 
 	private Nodo<T> siguiente;
 	private Nodo<T> anterior;
-	
-	
-	public Nodo(T informacion) {
-		this.informacion = informacion;
-	}
 
-	public T getInformacion() {
-		return informacion;
-	}
-
-	public void setInformacion(T informacion) {
-		this.informacion = informacion;
-	}
 
 	public void cambiarSiguiente(Nodo<T> siguiente) {
 		this.siguiente = siguiente;
